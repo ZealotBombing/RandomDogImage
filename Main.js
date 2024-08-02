@@ -1,12 +1,11 @@
 window.addEventListener('load',async(e)=>{
 
-    console.log(e)
-
     let res = await fetch('https://dog.ceo/api/breeds/image/random')
-    console.log(res)
-
     let data = await res.json()
-    console.log(data)
+    
+    document.getElementById('spinner').style.display = 'none'
 
     document.getElementById('dogImage').src = data.message
+
+    document.getElementById('dogName').textContent = data.message.split("/")[data.message.split("/").length - 2].replace('-',' ').toUpperCase()
 })
