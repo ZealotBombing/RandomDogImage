@@ -5,6 +5,8 @@ window.addEventListener('load',async(e)=>{
     
     document.getElementById('spinner').style.display = 'none'
 
+    document.getElementById('a-reload').classList.remove('d-none')
+
     document.getElementById('dogImage').src = data.message
 
     document.getElementById('dogName').textContent = data.message.split("/")[data.message.split("/").length - 2].replace('-',' ').toUpperCase()
